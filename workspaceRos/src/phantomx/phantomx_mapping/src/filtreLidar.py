@@ -31,7 +31,7 @@ def sub_lidar(msg):
 
 def sub_position(msg):
     global pos_x, pos_y, check_position
-    if ( abs(pos_x - msg.x) > 0.01):
+    if ( abs(pos_x - msg.x) > 0.00):
         pos_x = msg.x
         pos_y = msg.y
         check_position = 1
@@ -39,7 +39,7 @@ def sub_position(msg):
 
 def sub_orientation(msg):
     global roll, pitch, heading, check_orientation
-    if ( abs(heading - msg.z) > 0.001):
+    if ( abs(heading - msg.z) > 0.000):
         heading = msg.z
         roll = msg.x
         pitch = msg.y

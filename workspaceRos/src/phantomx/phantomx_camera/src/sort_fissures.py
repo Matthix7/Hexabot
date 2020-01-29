@@ -121,7 +121,7 @@ if __name__ == '__main__':
     node_name = 'sort_fissures'
     rospy.init_node(node_name)
     rospy.loginfo("{} is launched".format(node_name))
-    rate = rospy.Rate(10) # 10hz
+    rate = rospy.Rate(25) # 10hz
 
     rospy.Subscriber("current_fissure", Marker, sub_marker_fissures)
     rospy.Subscriber("vect_position", Point, sub_position)
@@ -137,7 +137,7 @@ if __name__ == '__main__':
     marker_fissure.type = 8
 
     marker_global = Marker()
-    marker_global.header.frame_id = 'base_link'
+    marker_global.header.frame_id = 'base_stabilized'
     marker_global.header.stamp = rospy.get_rostime()
     marker_global.id = 0
     marker_global.action = 0
